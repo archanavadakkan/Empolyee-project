@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+<div class="menu_content">
+        <a href="{% url 'register' %}">Register</a>&nbsp;&nbsp;&nbsp;
+        <a href="{% url 'login' %}">Login</a>
+</div>
+    </center>
+
+{% for i in obj %}
+<div>
+<table>
+    <tr>
+<li>
+{{i.emp_no}}
+<a href="{% url 'detail' i.id %}">{{i.name}}</a><br>
+
+<img src={{i.img.url}} alt="" style="width:100px;height:100px;"> <br><br>
+
+ </li>
+    </tr>
+</table>
+    </div>
+{% endfor %}
+<center><a class="btn btn-success" href="{% url 'add' %}">ADD</a></center>
+{% endblock %}

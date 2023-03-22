@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+{{detail.emp_no}}<br>
+{{detail.name}}<br>
+<img src="{{detail.img.url}}" alt="" style="width:500px;height:500px;"><br>
+{{detail.status}}<br>
+{{detail.address}}<br>
+{{detail.emp_start_date}}<br>
+{{detail.emp_end_date}}<br>
+<a class="btn btn-warning" href="{% url 'update' detail.id %}">UPDATE</a><br>
+<a class="btn btn-danger" href="{% url 'delete' detail.id %}">DELETE</a><br>
+
+
+{% endblock %}
