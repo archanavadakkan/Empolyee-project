@@ -2,10 +2,15 @@
 {% block content %}
 <center>
 <div class="menu_content">
-        <a href="{% url 'register' %}">Register</a>&nbsp;&nbsp;&nbsp;
-        <a href="{% url 'login' %}">Login</a>
+    {% if user.is_authenticated %}
+    Hai {{user.username}}<br>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'register' %}">Register</a>&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'login' %}">Login</a>
 </div>
-    </center>
+    {% endif %}
+</center>
 
 {% for i in obj %}
 <div>
