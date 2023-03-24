@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<center>
 
 {{detail.emp_no}}<br>
 {{detail.name}}<br>
@@ -9,8 +9,8 @@
 {{detail.address}}<br>
 {{detail.emp_start_date}}<br>
 {{detail.emp_end_date}}<br>
-<a class="btn btn-warning" href="{% url 'update' detail.id %}">UPDATE</a><br>
-<a class="btn btn-danger" href="{% url 'delete' detail.id %}">DELETE</a><br>
+<button style="background-color:green;"><a class="btn btn-warning" href="{% url 'update' detail.id %}">UPDATE</a></button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button style="background-color:red;"><a class="btn btn-danger" href="{% url 'delete' detail.id %}">DELETE</a></button><br>
 
-
+</center>
 {% endblock %}
